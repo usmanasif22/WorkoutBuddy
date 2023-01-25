@@ -1,0 +1,18 @@
+<% unless @workout.blank? %>
+<div class="details " >
+  <h3><%= "Title: "+ @workout.title %></h3>
+  <h3><%= "Load: " + @workout.load.to_s + "(kg)" %></h3>
+  <h3><%= "Reps: "+ @workout.reps.to_s %></h3>
+  <h3><%= "Created By: " + @workout.user.name %></h3>
+  <h3><%= "Created At: "+ time_ago_in_words(@workout.created_at)+" ago" %></h3><br>
+  <div id="actions">
+  <span><%= link_to "Edit",edit_workout_path(@workout)%></span>
+  <span><%= link_to "Delete",workout_path(@workout),method:'delete',data:{confirm:"Are you sure ?"} %></span>
+  </div>
+  
+</div>
+<% else %>
+<div class="details " >
+  <%= @message  %> 
+</div>
+<% end %>

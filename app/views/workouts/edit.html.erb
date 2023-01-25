@@ -1,0 +1,12 @@
+<div id="workoutedit">
+<h2 class="text-success p-3">Edit Workout</h2>
+<%= form_with model: @workout do |f| %>
+<%= f.label :title %><br>
+<%= f.text_field :title %><br><br>
+<%= f.label :load, 'Load (kg)' %><br>
+<%= f.text_field :load %><br><br>
+<%= f.label :reps %><br>
+<%= f.text_field :reps %><br><br>
+<div class="create"><%= f.submit %></div>
+<%end%>
+</div>
